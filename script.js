@@ -1,50 +1,38 @@
 let producto=prompt("Ingresa el número correspondiente al producto que quieras añadir a tu lista de compras: \n1-Vegetales $8 \n2-Carne $25 \n3-Pescado $25 \n4-Leche $5 \nCuando hayas finalizado escribe LISTO")
 let lista=""
-let precioV=8
-let precioP=25
-let precioC=25 
-let precioL=5
-let precioTotal=""
+let precioV=""
+let precioC=""
+let precioP=""
+let precioL=""
+
+function sumarTotal(precioV, precioC, precioP, precioL) {
+    return precioV+ precioC+ precioP+ precioL
+    
+}
 
 while (producto!="LISTO"&&producto!="listo"&&producto!="Listo") {
 
         switch (producto) {
         case "1":
-            function sumar(precioTotal, precioV) {
-                precioTotal=sumar(precioTotal,precioV)
-                return(precioTotal+precioV)
-            }
+            precioV=8
             lista+="-Vegetales"+"\n"
             alert("Haz añadido Vegetales a tu lista")
-            console.log(precioTotal)
                         
             break
         case "2":
-
-            function sumar(precioTotal, precioC) {
-                precioTotal=sumar(precioTotal,precioC)
-                return(precioTotal+precioC)
-            }
+            precioC=25
             alert("Haz añadido Carne a tu lista") 
             lista+="-Carne"+"\n"
-            console.log(precioTotal)
             break 
 
         case "3":
-            function sumar(precioTotal, precioP) {
-                precioTotal=sumar(precioTotal,precioP)
-                return(precioTotal+precioP)
-            }
+            precioP=25
             alert("Haz añadido Pescado a tu lista") 
             lista+="-Pescado"+"\n"
-            console.log(precioTotal)
+
              break
         case "4":
-            function sumar(precioTotal, precioL) {
-                precioTotal=sumar(precioTotal,precioL)
-                return(precioTotal+precioL)
-            }
-            console.log(precioTotal)
+           precioL=5
             alert("Haz añadido Leche a tu lista") 
             lista+="-Leche"+"\n"
            
@@ -58,7 +46,9 @@ while (producto!="LISTO"&&producto!="listo"&&producto!="Listo") {
     
 }
 
+    
+
 
     alert("Tu lista de compras es:\n"+lista)
-    sumar(precioTotal)
-    alert("El total es " + precioTotal)
+    sumarTotal(precioV, precioC, precioP, precioL)
+    alert("El total es " + sumarTotal(precioV, precioC, precioP, precioL))
