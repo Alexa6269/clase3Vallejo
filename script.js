@@ -1,44 +1,64 @@
-let producto=prompt("Ingresa el número correspondiente al producto que quieras añadir a tu lista de compras: \n1-Vegetales \n2-Carne \n3-Pescado \n4-Leche \n5-Café \nCuando hayas finalizado escribe LISTO")
+let producto=prompt("Ingresa el número correspondiente al producto que quieras añadir a tu lista de compras: \n1-Vegetales $8 \n2-Carne $25 \n3-Pescado $25 \n4-Leche $5 \nCuando hayas finalizado escribe LISTO")
 let lista=""
+let precioV=8
+let precioP=25
+let precioC=25 
+let precioL=5
+let precioTotal=""
 
 while (producto!="LISTO"&&producto!="listo"&&producto!="Listo") {
 
         switch (producto) {
         case "1":
-            alert("Haz añadido Vegetales a tu lista")
+            function sumar(precioTotal, precioV) {
+                precioTotal=sumar(precioTotal,precioV)
+                return(precioTotal+precioV)
+            }
             lista+="-Vegetales"+"\n"
-            
+            alert("Haz añadido Vegetales a tu lista")
+            console.log(precioTotal)
+                        
             break
         case "2":
+
+            function sumar(precioTotal, precioC) {
+                precioTotal=sumar(precioTotal,precioC)
+                return(precioTotal+precioC)
+            }
             alert("Haz añadido Carne a tu lista") 
             lista+="-Carne"+"\n"
-             
+            console.log(precioTotal)
             break 
 
         case "3":
-             alert("Haz añadido Pescado a tu lista")
-             lista+="-Pescado"+"\n"
-                
+            function sumar(precioTotal, precioP) {
+                precioTotal=sumar(precioTotal,precioP)
+                return(precioTotal+precioP)
+            }
+            alert("Haz añadido Pescado a tu lista") 
+            lista+="-Pescado"+"\n"
+            console.log(precioTotal)
              break
         case "4":
-            alert("Haz añadido Leche a tu lista")
+            function sumar(precioTotal, precioL) {
+                precioTotal=sumar(precioTotal,precioL)
+                return(precioTotal+precioL)
+            }
+            console.log(precioTotal)
+            alert("Haz añadido Leche a tu lista") 
             lista+="-Leche"+"\n"
            
-            break
-         case "5":
-            alert("Haz añadido Café a tu lista")
-            lista+="-Café"+"\n"
-            
-            break   
-                
+            break                
         default:
             alert("Por favor elige el número correspondiente a tu producto")
             break
         }
     
-        producto=prompt("Ingresa el número correspondiente al producto que quieras añadir a tu lista de compras: \n1-Vegetales \n2-Carne \n3-Pescado \n4-Leche \n5-Café \nCuando hayas finalizado escribe LISTO") 
+        producto=prompt("Ingresa el número correspondiente al producto que quieras añadir a tu lista de compras: \n1-Vegetales $8 \n2-Carne $25 \n3-Pescado $25 \n4-Leche $5 \nCuando hayas finalizado escribe LISTO") 
     
 }
 
 
     alert("Tu lista de compras es:\n"+lista)
+    sumar(precioTotal)
+    alert("El total es " + precioTotal)
